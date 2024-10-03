@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+    <ion-toolbar class="toolbar-sign-up" mode="ios">
+        <div class="header-sign-up">
+            <ion-icon name="chevron-back-outline" class="btn-back" (click)="navigateBack()"></ion-icon>
+
+            <h2 class="title">{{stepName}}</h2>
+
+            <section class="steps">
+                <div class="step" *ngFor="let i of [0,1,2];index as index">
+                    <span class="circle" [class.active]="index <= activeIndex"></span>
+
+                    <div class="line" *ngIf="index !== 2"></div>
+                </div>
+            </section>
+        </div>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <swiper-container #swiper class="style-swiper" (afterinit)="swiperReady()" slides-per-view="auto"
+        allow-touch-move="false">
+        <swiper-slide class="slide">
+            <app-phone-number *ngIf="activeIndex === 0"
+                (phoneNumberChange)="phoneNumberChange($event)"></app-phone-number>
+        </swiper-slide>
+        <swiper-slide class="slide">
+            <app-account-details *ngIf="activeIndex === 1"
+                (formData)="formDataChange($event, numberPhone)"></app-account-details>
+        </swiper-slide>
+        <swiper-slide class="slide">
+            <app-agreement *ngIf="activeIndex === 2" (checkAgreement)="sendData()"></app-agreement>
+        </swiper-slide>
+    </swiper-container>
+</ion-content>

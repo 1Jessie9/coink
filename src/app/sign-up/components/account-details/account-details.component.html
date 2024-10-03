@@ -1,0 +1,26 @@
+<section class="account-details">
+    <app-title-description [infoDescription]="descriptionAccountDetails"></app-title-description>
+
+    <span class="jumping-dots" *ngIf="loading">
+        <span class="dot" *ngFor="let dot of [1, 2, 3]; let i = index" [ngClass]="'dot-' + (i + 1)"></span>
+    </span>
+
+    <section class="form" *ngIf="!loading && genders.length && documentTypes.length">
+        <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+            <h6 class="title-form">Documento de identidad</h6>
+            <div class="contain-inputs">
+                <app-shared-input *ngFor="let config of inputConfigs" [config]="config"
+                    [formGroup]="registrationForm"></app-shared-input>
+            </div>
+            <h6 class="title-form">Configura tu cuenta</h6>
+            <div class="contain-inputs">
+                <app-shared-input *ngFor="let config of inputConfigsAccount" [config]="config"
+                    [formGroup]="registrationForm"></app-shared-input>
+            </div>
+
+            <div class="contain-btn">
+                <app-button [button]="submitBtn"></app-button>
+            </div>
+        </form>
+    </section>
+</section>

@@ -1,0 +1,28 @@
+.success-modal {
+    text-align: center;
+    padding: 35px;
+
+    .icon-coink {
+        font-size: 130px;
+        height: 114px;
+    }
+
+    .contain-text {
+        .title {
+            color: var(--ion-color-secondary);
+            font-size: var(--title-large-size);
+            font-weight: 700;
+            margin: 30px 0 10px;
+        }
+
+        .description {
+            font-size: var(--title-small-size);
+            margin: 0;
+            font-weight: 400;
+        }
+    }
+
+    .contain-btn {
+        margin-top: 30px;
+    }
+}

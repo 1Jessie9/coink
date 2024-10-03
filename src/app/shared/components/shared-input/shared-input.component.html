@@ -1,0 +1,34 @@
+<section *ngIf="config && formGroup" [formGroup]="formGroup" class="shared-input">
+    <ng-container [ngSwitch]="config.type">
+        <ion-input *ngSwitchCase="'text'" [label]="config.label" labelPlacement="floating"
+            [formControlName]="config.controlName" mode="ios" [minlength]="config.minLength"
+            [maxlength]="config.maxLength" [errorText]="config.errorText"></ion-input>
+        <ion-input *ngSwitchCase="'number'" [label]="config.label" labelPlacement="floating"
+            [formControlName]="config.controlName" inputmode="numeric" [type]="config.password ? 'password' : ''" mode="ios" [minlength]="config.minLength"
+            [maxlength]="config.maxLength" [errorText]="config.errorText" (ionInput)="validateNumberInput($event)">
+            <ion-input-password-toggle *ngIf="config.password" color="secondary" slot="end"></ion-input-password-toggle>
+        </ion-input>
+
+        <!-- Select -->
+        <ion-select class="style-select" *ngSwitchCase="'select'" label-placement="floating" [label]="config.label"
+            [formControlName]="config.controlName" mode="ios" [okText]="'Listo'" [cancelText]="'Cancelar'">
+            <ion-select-option *ngFor="let option of config.options" [value]="option.id">
+                {{ option.name}}
+            </ion-select-option>
+        </ion-select>
+
+        <!-- date -->
+        <button class="btn-datetime" *ngSwitchCase="'date'" expand="full" type="button" (click)="openDateModal()"
+            [class.valid]="formGroup.get(config.controlName)?.valid">
+            {{ getDateDisplayValue(config.controlName) || config.label }}
+        </button>
+
+        <ion-modal class="modal-datetime" [keepContentsMounted]="true" [isOpen]="isModalOpen">
+            <ng-template>
+                <ion-datetime color="tertiary" [id]="config.controlName" [showDefaultButtons]="true"
+                    [doneText]="'Hecho'" [cancelText]="'Cancelar'" presentation="date"
+                    (ionChange)="onDateSelected($event, config.controlName)"></ion-datetime>
+            </ng-template>
+        </ion-modal>
+    </ng-container>
+</section>

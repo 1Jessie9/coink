@@ -1,0 +1,45 @@
+.agreement {
+    max-width: 90%;
+    margin: auto;
+
+    .contain-text {
+        .title {
+            color: var(--ion-color-secondary);
+            font-size: var(--title-small-size);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-top: 30px;
+        }
+
+        .text {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+
+    .checkbox-style {
+        width: fit-content;
+        --size: 20px;
+        --checkmark-color: white;
+        --checkmark-width: 3px;
+        margin-top: 20px;
+
+        &::part(container) {
+            border-radius: 5px;
+        }
+    }
+
+    .contain-agreement {
+        margin: 50px 0;
+
+        .link-agreement {
+            color: var(--ion-color-secondary);
+            font-weight: 700;
+            font-size: var(--title-small-size);
+        }
+    }
+
+    .contain-btn {
+        margin: 20px 0;
+    }
+}

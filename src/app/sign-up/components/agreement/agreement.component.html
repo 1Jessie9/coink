@@ -1,0 +1,31 @@
+<section class="agreement">
+    <app-title-description [infoDescription]="descriptionAgreement"></app-title-description>
+
+    <div class="contain-text">
+        <h6 class="title">Lo más importante</h6>
+
+        <p class="text">Para la apertura del Depósito de Bajo Monto en COINK debes ser una persona natural que de
+            acuerdo con nuestra
+            legislación vigente te encuentres en plena capacidad para adquirir derechos y contraer obligaciones.</p>
+
+        <p class="text">Abrirás una cuenta COINK de Bajo Monto la cual te permitirá tener un saldo hasta por 8 salarios
+            mínimos en el
+            mes y realizar débitos por el mismo valor. Si deseas sobrepasar estos límites debes solicitarnos la apertura
+            de un Depósito Ordinario COINK Persona Natural.</p>
+
+        <p class="text">Solo puedes tener una cuenta COINK de Bajo Monto y podrás utilizar tu dispositivo móvil para
+            consultar tu
+            saldo, tus movimientos, realizar tus transacciones y administrar tu cuenta.</p>
+
+        <p class="text">Recuerda que no necesitas saldo mínimo ni monto inicial para su apertura.</p>
+    </div>
+
+    <div class="contain-agreement">
+        <a class="link-agreement" href="https://coink.com/reglamento/reglamento-v1/">Lee tu contrato</a>
+        <ion-checkbox labelPlacement="end" class="checkbox-style" (ionChange)="changeCheck($event)">He leído y acepto el contrato</ion-checkbox>
+    </div>
+
+    <div class="contain-btn">
+        <app-button [button]="agreementBtn" (btnClick)="checkBtn()"></app-button>
+    </div>
+</section>

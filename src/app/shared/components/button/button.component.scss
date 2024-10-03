@@ -1,0 +1,18 @@
+.style-button {
+    width: 100%;
+    --border-radius: 25px;
+    text-transform: uppercase;
+    font-weight: 700;
+    height: 50px;
+    display: block;
+
+    &.primary {
+        --box-shadow: 0 2px 6px #1eeb0080;
+    }
+
+    &.button-disabled {
+        --ion-color-base: var(--ion-color-medium) !important;
+        --box-shadow: none;
+        --ion-color-contrast: white !important;
+    }
+}

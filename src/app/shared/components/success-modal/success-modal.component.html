@@ -1,0 +1,12 @@
+<div class="success-modal" *ngIf="infoModal">
+    <ion-icon [src]="infoModal.iconSrc" class="icon-coink"></ion-icon>
+
+    <div class="contain-text">
+        <h6 class="title">{{infoModal.title}}</h6>
+        <p class="description">{{infoModal.text}}</p>
+    </div>
+
+    <div class="contain-btn">
+        <app-button (btnClick)="btnClick()" [button]="infoModal.buttonInfo"></app-button>
+    </div>
+</div>

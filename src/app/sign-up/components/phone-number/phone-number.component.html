@@ -1,0 +1,27 @@
+<section class="phone-number">
+    <app-title-description [infoDescription]="descriptionNumber"></app-title-description>
+
+    <section class="phone">
+        <ion-input mode="md" fill="outline" placeholder="000 000 0000" readonly="true" [(ngModel)]="phoneNumber"></ion-input>
+
+        <div class="keyboard">
+            <div class="numbers">
+                <span *ngFor="let i of [1,2,3,4,5,6,7,8,9]" (click)="addNumber(i)">
+                    {{i}}
+                </span>
+                <div class="contain-icon" (click)="removeNumber()">
+                    <button class="btn-action backspace" [class.active]="numberPhoneLength() > 0">
+                        <ion-icon class="icon" name="backspace-outline"></ion-icon>
+                    </button>
+                </div>
+                <span>0</span>
+                <div class="contain-icon" [ngClass]="{'active': numberPhoneLength() === 10}"
+                    (click)="submitPhoneNumber()">
+                    <button class="btn-action checkmark" [class.active]="numberPhoneLength() === 10">
+                        <ion-icon class="icon" name="checkmark-outline"></ion-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

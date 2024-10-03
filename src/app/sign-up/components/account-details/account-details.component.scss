@@ -1,0 +1,66 @@
+.account-details {
+    max-width: 90%;
+    margin: auto;
+    min-height: 80vh;
+
+    .title-form {
+        color: var(--ion-color-secondary);
+        font-size: var(--title-small-size);
+        font-weight: 700;
+        margin-top: 30px;
+    }
+
+    .contain-inputs {
+        padding-left: 18px;
+    }
+
+    .contain-btn {
+        margin: 20px 0;
+    }
+
+    .jumping-dots {
+        display: flex;
+        width: 130px;
+        position: absolute;
+        z-index: 1;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        height: fit-content;
+        left: 0;
+        right: 0;
+
+        .dot {
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            animation: jump 1s infinite;
+            display: inline-block;
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background-color: var(--ion-color-primary);
+
+            @for $i from 1 through 3 {
+                &-#{$i} {
+                    animation-delay: #{200 * $i}ms;
+                }
+            }
+        }
+
+    }
+
+    @keyframes jump {
+        0% {
+            bottom: 0px;
+        }
+
+        20% {
+            bottom: 10px;
+        }
+
+        40% {
+            bottom: 0px;
+        }
+    }
+}

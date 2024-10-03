@@ -1,0 +1,8 @@
+<div class="title-description">
+    <ion-icon [src]="infoDescription.iconSrc" class="icon-coink"></ion-icon>
+
+    <section class="info">
+        <h5 class="title" *ngIf="infoDescription.title" [innerHTML]="infoDescription.title| sanitizeHtml"></h5>
+        <p class="description" [innerHTML]="infoDescription.text| sanitizeHtml"></p>
+    </section>
+</div>

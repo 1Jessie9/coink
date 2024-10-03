@@ -1,20 +1,12 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+    <div class="home">
+        <img src="/assets/icons/logo-coink.svg" alt="logo-coink" title="logo-coink" class="logo-img">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+        <h1 class="title">La alcancía que siempre te acompaña</h1>
+    </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <div class="contain-buttons">
+        <app-button (btnClick)="btnClick($event)" [button]="createAccountBtn"></app-button>
+        <app-button (btnClick)="btnClick($event)" [button]="loginAccountBtn"></app-button>
+    </div>
 </ion-content>
