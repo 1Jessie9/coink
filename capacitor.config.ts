@@ -8,8 +8,9 @@ const config: CapacitorConfig = {
         SplashScreen: {
             launchShowDuration: 3000,
             backgroundColor: "#1eeb00",
+            androidScaleType: "CENTER_CROP",
             showSpinner: false,
-            androidSpinnerStyle: "large",
+            androidSpinnerStyle: "small",
             iosSpinnerStyle: "small",
             splashFullScreen: true,
             splashImmersive: true,
